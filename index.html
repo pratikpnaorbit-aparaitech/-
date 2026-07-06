@@ -1,13 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cow-s-pashusetu</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cow Landing Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4fff4;
+}
+
+header{
+    background:#2e7d32;
+    color:white;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    font-size:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    min-height:90vh;
+    padding:40px;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero-text h2{
+    font-size:48px;
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    line-height:1.6;
+    color:#555;
+    margin-bottom:25px;
+}
+
+button{
+    padding:15px 30px;
+    background:#2e7d32;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+.hero img{
+    width:450px;
+    max-width:100%;
+}
+
+footer{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🐄 Cow World</h1>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+    <h2>Welcome to Cow World</h2>
+
+    <p>
+        Discover the beauty, importance, and benefits of cows.
+        Learn about dairy farming, different breeds, and how cows
+        contribute to agriculture and sustainable living.
+    </p>
+
+    <button>Learn More</button>
+</div>
+
+<div>
+    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800" alt="Cow">
+</div>
+
+</section>
+
+<footer>
+    © 2026 Cow World | Made with ❤️ using HTML & CSS
+</footer>
+
+</body>
 </html>
