@@ -1,1 +1,1238 @@
-pratik
+pratik<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🐄 Cow Market - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            padding: clamp(10px, 3vw, 30px);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            border-radius: clamp(16px, 3vw, 24px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            min-height: 600px;
+            min-height: clamp(500px, 80vh, 700px);
+        }
+
+        /* ===== LEFT SIDE (Hidden on mobile) ===== */
+        .login-left {
+            flex: 1;
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c23 100%);
+            padding: 40px;
+            padding: clamp(20px, 4vw, 50px);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .brand {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            gap: clamp(8px, 2vw, 16px);
+            margin-bottom: 10px;
+        }
+
+        .logo i {
+            font-size: 40px;
+            font-size: clamp(30px, 5vw, 50px);
+            color: #ffd700;
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            font-size: clamp(24px, 4vw, 40px);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo h1 span {
+            color: #ffd700;
+            font-weight: 300;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-size: clamp(14px, 2vw, 22px);
+            opacity: 0.9;
+            margin-bottom: 30px;
+            margin-bottom: clamp(15px, 3vw, 40px);
+        }
+
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            gap: clamp(10px, 1.5vw, 20px);
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            gap: clamp(8px, 1.5vw, 16px);
+            font-size: 16px;
+            font-size: clamp(13px, 1.5vw, 18px);
+        }
+
+        .feature i {
+            width: 30px;
+            width: clamp(24px, 3vw, 36px);
+            height: 30px;
+            height: clamp(24px, 3vw, 36px);
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 18px);
+            flex-shrink: 0;
+        }
+
+        .cow-image {
+            font-size: 80px;
+            font-size: clamp(50px, 8vw, 100px);
+            opacity: 0.3;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* ===== RIGHT SIDE ===== */
+        .login-right {
+            flex: 1;
+            padding: 40px;
+            padding: clamp(20px, 4vw, 50px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 380px;
+            max-width: clamp(300px, 70vw, 420px);
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+            margin-bottom: clamp(20px, 4vw, 40px);
+        }
+
+        .login-header h2 {
+            font-size: 28px;
+            font-size: clamp(22px, 4vw, 34px);
+            color: #333;
+            font-weight: 600;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+            font-size: clamp(12px, 1.8vw, 16px);
+            margin-top: 5px;
+        }
+
+        /* ===== FORM INPUTS ===== */
+        .input-group {
+            margin-bottom: 20px;
+            margin-bottom: clamp(14px, 2.5vw, 24px);
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 6px;
+            margin-bottom: clamp(4px, 1vw, 8px);
+        }
+
+        .input-group label i {
+            margin-right: 8px;
+            color: #4a7c23;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            padding: clamp(10px, 1.5vw, 16px);
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            border-radius: clamp(8px, 1.5vw, 12px);
+            font-size: 14px;
+            font-size: clamp(13px, 1.5vw, 16px);
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+            -webkit-appearance: none;
+            background: white;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #4a7c23;
+            box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.1);
+        }
+
+        .input-group input.error {
+            border-color: #e74c3c;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 45px;
+            padding-right: clamp(40px, 6vw, 55px);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            right: clamp(10px, 1.5vw, 16px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            padding: 8px;
+            padding: clamp(6px, 1vw, 10px);
+            font-size: 16px;
+            font-size: clamp(14px, 2vw, 20px);
+            touch-action: manipulation;
+        }
+
+        .toggle-password:hover {
+            color: #333;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            font-size: clamp(11px, 1.2vw, 14px);
+            margin-top: 5px;
+            min-height: 20px;
+            min-height: clamp(16px, 2vh, 24px);
+        }
+
+        /* ===== OPTIONS ===== */
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            margin-bottom: clamp(18px, 3vw, 32px);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            gap: clamp(6px, 1vw, 12px);
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            touch-action: manipulation;
+        }
+
+        .checkbox-label input {
+            display: none;
+        }
+
+        .checkmark {
+            width: 18px;
+            width: clamp(16px, 2vw, 22px);
+            height: 18px;
+            height: clamp(16px, 2vw, 22px);
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+
+        .checkbox-label input:checked + .checkmark {
+            background: #4a7c23;
+            border-color: #4a7c23;
+        }
+
+        .checkbox-label input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-size: clamp(10px, 1.2vw, 14px);
+        }
+
+        .forgot-password {
+            color: #4a7c23;
+            text-decoration: none;
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            font-weight: 500;
+            touch-action: manipulation;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== LOGIN BUTTON ===== */
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            padding: clamp(12px, 2vw, 18px);
+            background: linear-gradient(135deg, #2d5016, #4a7c23);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            border-radius: clamp(8px, 1.5vw, 12px);
+            font-size: 16px;
+            font-size: clamp(14px, 2vw, 18px);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            gap: clamp(8px, 1.5vw, 14px);
+            font-family: 'Poppins', sans-serif;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(74, 124, 35, 0.3);
+        }
+
+        .login-btn:active {
+            transform: scale(0.98);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-btn i {
+            transition: transform 0.3s;
+        }
+
+        .login-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ===== SPINNER ===== */
+        .spinner {
+            display: none;
+            width: 20px;
+            width: clamp(16px, 2vw, 24px);
+            height: 20px;
+            height: clamp(16px, 2vw, 24px);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== SOCIAL LOGIN ===== */
+        .social-login {
+            margin-top: 25px;
+            margin-top: clamp(18px, 3vw, 32px);
+            text-align: center;
+        }
+
+        .social-login p {
+            color: #999;
+            font-size: 13px;
+            font-size: clamp(11px, 1.5vw, 15px);
+            margin-bottom: 15px;
+            margin-bottom: clamp(10px, 2vw, 20px);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            gap: clamp(10px, 2vw, 18px);
+        }
+
+        .social-btn {
+            width: 45px;
+            width: clamp(40px, 6vw, 52px);
+            height: 45px;
+            height: clamp(40px, 6vw, 52px);
+            border-radius: 50%;
+            border: 2px solid #e0e0e0;
+            background: white;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 18px;
+            font-size: clamp(16px, 2.5vw, 22px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .social-btn:active {
+            transform: scale(0.92);
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn.google:hover {
+            border-color: #db4437;
+            color: #db4437;
+        }
+
+        .social-btn.facebook:hover {
+            border-color: #1877f2;
+            color: #1877f2;
+        }
+
+        .social-btn.github:hover {
+            border-color: #333;
+            color: #333;
+        }
+
+        /* ===== REGISTER LINK ===== */
+        .register-link {
+            margin-top: 20px;
+            margin-top: clamp(15px, 2.5vw, 28px);
+            text-align: center;
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            color: #666;
+        }
+
+        .register-link a {
+            color: #4a7c23;
+            text-decoration: none;
+            font-weight: 600;
+            touch-action: manipulation;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SUCCESS MESSAGE ===== */
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            padding: clamp(10px, 1.5vw, 16px);
+            border-radius: 8px;
+            border-radius: clamp(6px, 1vw, 10px);
+            margin-bottom: 15px;
+            margin-bottom: clamp(10px, 2vw, 20px);
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            text-align: center;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            top: 20px;
+            top: clamp(12px, 3vh, 30px);
+            right: 20px;
+            right: clamp(12px, 3vw, 30px);
+            padding: 15px 25px;
+            padding: clamp(12px, 1.8vw, 20px) clamp(18px, 2.5vw, 30px);
+            border-radius: 10px;
+            border-radius: clamp(8px, 1.5vw, 12px);
+            color: white;
+            font-weight: 500;
+            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 16px);
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            max-width: 90vw;
+            word-break: break-word;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            background: #28a745;
+        }
+
+        .toast.error {
+            background: #dc3545;
+        }
+
+        /* ======================================== */
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        /* ======================================== */
+
+        /* Tablets & Small Laptops */
+        @media (max-width: 992px) {
+            .container {
+                min-height: auto;
+                max-height: 90vh;
+            }
+        }
+
+        /* Mobile Landscape & Tablets */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            .container {
+                flex-direction: column;
+                min-height: auto;
+                border-radius: 16px;
+            }
+
+            .login-left {
+                padding: 24px 20px;
+                min-height: 200px;
+                min-height: clamp(160px, 30vh, 240px);
+            }
+
+            .login-right {
+                padding: 24px 20px;
+            }
+
+            .features {
+                display: none;
+            }
+
+            .cow-image {
+                font-size: 60px;
+                font-size: clamp(40px, 10vw, 70px);
+                opacity: 0.2;
+            }
+
+            .tagline {
+                margin-bottom: 0;
+            }
+
+            .login-box {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile Portrait */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                border-radius: 12px;
+            }
+
+            .login-left {
+                padding: 20px 16px;
+                min-height: 140px;
+                min-height: clamp(120px, 25vh, 180px);
+            }
+
+            .login-left .tagline {
+                font-size: 13px;
+                margin-bottom: 0;
+            }
+
+            .login-left .logo i {
+                font-size: 26px;
+            }
+
+            .login-left .logo h1 {
+                font-size: 20px;
+            }
+
+            .login-right {
+                padding: 20px 16px;
+            }
+
+            .login-header h2 {
+                font-size: 20px;
+            }
+
+            .login-header p {
+                font-size: 12px;
+            }
+
+            .input-group input {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+
+            .options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .social-btn {
+                width: 38px;
+                height: 38px;
+                font-size: 14px;
+            }
+
+            .social-icons {
+                gap: 8px;
+            }
+        }
+
+        /* Very Small Screens */
+        @media (max-width: 360px) {
+            .login-left {
+                min-height: 100px;
+                padding: 16px 12px;
+            }
+
+            .login-left .logo h1 {
+                font-size: 17px;
+            }
+
+            .login-left .logo i {
+                font-size: 22px;
+            }
+
+            .login-right {
+                padding: 16px 12px;
+            }
+
+            .login-header h2 {
+                font-size: 18px;
+            }
+
+            .login-btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .toast {
+                padding: 10px 16px;
+                font-size: 12px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .container {
+                flex-direction: row;
+                min-height: auto;
+                max-height: 90vh;
+            }
+
+            .login-left {
+                padding: 16px;
+                min-height: 100%;
+            }
+
+            .login-left .features {
+                display: none;
+            }
+
+            .login-left .cow-image {
+                display: none;
+            }
+
+            .login-left .tagline {
+                margin-bottom: 8px;
+                font-size: 12px;
+            }
+
+            .login-left .logo h1 {
+                font-size: 18px;
+            }
+
+            .login-left .logo i {
+                font-size: 24px;
+            }
+
+            .login-right {
+                padding: 16px;
+                overflow-y: auto;
+            }
+
+            .login-box {
+                max-width: 100%;
+            }
+
+            .login-header {
+                margin-bottom: 12px;
+            }
+
+            .login-header h2 {
+                font-size: 18px;
+            }
+
+            .input-group {
+                margin-bottom: 10px;
+            }
+
+            .input-group label {
+                font-size: 11px;
+            }
+
+            .input-group input {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+
+            .options {
+                margin-bottom: 12px;
+                flex-direction: row;
+            }
+
+            .social-login {
+                margin-top: 12px;
+            }
+
+            .social-login p {
+                margin-bottom: 8px;
+                font-size: 11px;
+            }
+
+            .social-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 12px;
+            }
+
+            .register-link {
+                margin-top: 10px;
+                font-size: 12px;
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            }
+
+            .container {
+                background: #1e1e2e;
+            }
+
+            .login-right {
+                background: #1e1e2e;
+            }
+
+            .login-header h2 {
+                color: #eee;
+            }
+
+            .login-header p {
+                color: #aaa;
+            }
+
+            .input-group label {
+                color: #ddd;
+            }
+
+            .input-group input {
+                background: #2d2d44;
+                border-color: #3d3d5a;
+                color: #eee;
+            }
+
+            .input-group input:focus {
+                border-color: #4a7c23;
+                box-shadow: 0 0 0 3px rgba(74, 124, 35, 0.2);
+            }
+
+            .input-group input::placeholder {
+                color: #888;
+            }
+
+            .checkbox-label {
+                color: #aaa;
+            }
+
+            .checkmark {
+                border-color: #555;
+            }
+
+            .forgot-password {
+                color: #6a9c3d;
+            }
+
+            .register-link {
+                color: #aaa;
+            }
+
+            .register-link a {
+                color: #6a9c3d;
+            }
+
+            .social-btn {
+                background: #2d2d44;
+                border-color: #3d3d5a;
+                color: #ccc;
+            }
+
+            .social-btn:hover {
+                background: #3d3d5a;
+            }
+
+            .social-login p {
+                color: #888;
+            }
+
+            .login-left {
+                background: linear-gradient(135deg, #1a3a0a 0%, #2d5a14 100%);
+            }
+
+            .success-message {
+                background: #1a3a1a;
+                color: #8bc34a;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Side -->
+        <div class="login-left">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fas fa-cow"></i>
+                    <h1>Cow<span>Market</span></h1>
+                </div>
+                <p class="tagline">Buy & Sell Cows with Trust</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Transactions</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-handshake"></i>
+                        <span>Trusted Sellers</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Local Farmers</span>
+                    </div>
+                </div>
+                <div class="cow-image">
+                    <i class="fas fa-horse-head"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="login-right">
+            <div class="login-box">
+                <div class="login-header">
+                    <h2>Welcome Back!</h2>
+                    <p>Sign in to your account</p>
+                </div>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i> Login successful! Redirecting...
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" autocomplete="on">
+                    <!-- Email -->
+                    <div class="input-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Enter your email" 
+                            required
+                            autocomplete="email"
+                            inputmode="email"
+                        >
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <div class="password-wrapper">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                placeholder="Enter your password" 
+                                required
+                                autocomplete="current-password"
+                                minlength="6"
+                            >
+                            <button type="button" class="toggle-password" onclick="togglePassword()" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </button>
+                        </div>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <!-- Options -->
+                    <div class="options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password" onclick="forgotPassword(event)">Forgot Password?</a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn" id="loginBtn">
+                        <span id="btnText">Sign In</span>
+                        <i class="fas fa-arrow-right" id="btnIcon"></i>
+                        <div class="spinner" id="spinner"></div>
+                    </button>
+                </form>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-icons">
+                        <button class="social-btn google" onclick="socialLogin('Google')" aria-label="Login with Google">
+                            <i class="fab fa-google"></i>
+                        </button>
+                        <button class="social-btn facebook" onclick="socialLogin('Facebook')" aria-label="Login with Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </button>
+                        <button class="social-btn github" onclick="socialLogin('GitHub')" aria-label="Login with GitHub">
+                            <i class="fab fa-github"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Register Link -->
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#" onclick="register(event)">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        'use strict';
+
+        // ============================================
+        // TOGGLE PASSWORD
+        // ============================================
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        // ============================================
+        // TOAST NOTIFICATION
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            
+            // Force reflow
+            void toast.offsetWidth;
+            
+            toast.classList.add('show');
+            
+            // Auto hide after 3.5 seconds
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3500);
+        }
+
+        // ============================================
+        // HANDLE LOGIN
+        // ============================================
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const remember = document.getElementById('remember').checked;
+            
+            // Clear previous errors
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('email').classList.remove('error');
+            document.getElementById('password').classList.remove('error');
+            
+            // Validate
+            let isValid = true;
+            
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Email is required';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            } else if (!email.includes('@') || !email.includes('.')) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                document.getElementById('email').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!password) {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                document.getElementById('password').classList.add('error');
+                isValid = false;
+            }
+            
+            if (!isValid) return;
+            
+            // Show loading
+            const loginBtn = document.getElementById('loginBtn');
+            const btnText = document.getElementById('btnText');
+            const btnIcon = document.getElementById('btnIcon');
+            const spinner = document.getElementById('spinner');
+            
+            loginBtn.disabled = true;
+            btnText.textContent = 'Signing In...';
+            btnIcon.style.display = 'none';
+            spinner.style.display = 'block';
+            
+            // Simulate API call
+            setTimeout(() => {
+                if (email === 'demo@cowmarket.com' && password === 'password123') {
+                    showToast('✅ Login successful! Welcome back!', 'success');
+                    
+                    const successMsg = document.getElementById('successMessage');
+                    successMsg.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        // Redirect to dashboard (change URL as needed)
+                        window.location.href = '#dashboard';
+                    }, 2000);
+                } else {
+                    showToast('❌ Invalid email or password', 'error');
+                    document.getElementById('passwordError').textContent = 'Invalid credentials';
+                    document.getElementById('password').classList.add('error');
+                }
+                
+                loginBtn.disabled = false;
+                btnText.textContent = 'Sign In';
+                btnIcon.style.display = 'inline';
+                spinner.style.display = 'none';
+            }, 1500);
+        });
+
+        // ============================================
+        // SOCIAL LOGIN
+        // ============================================
+        function socialLogin(provider) {
+            showToast(`🔑 Connecting with ${provider}...`, 'success');
+            setTimeout(() => {
+                showToast(`✅ Signed in with ${provider}`, 'success');
+            }, 1000);
+        }
+
+        // ============================================
+        // FORGOT PASSWORD
+        // ============================================
+        function forgotPassword(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            
+            if (!email) {
+                showToast('📧 Please enter your email first', 'error');
+                document.getElementById('email').focus();
+                return;
+            }
+            
+            showToast('📧 Password reset link sent!', 'success');
+        }
+
+        // ============================================
+        // REGISTER
+        // ============================================
+        function register(e) {
+            e.preventDefault();
+            showToast('📝 Redirecting to registration...', 'success');
+            setTimeout(() => {
+                window.location.href = '#register';
+            }, 1000);
+        }
+
+        // ============================================
+        // DEMO AUTO-FILL
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('demo') === 'true') {
+                document.getElementById('email').value = 'demo@cowmarket.com';
+                document.getElementById('password').value = 'password123';
+                document.getElementById('remember').checked = true;
+                showToast('🔑 Demo credentials loaded!', 'success');
+            }
+        });
+
+        // ============================================
+        // KEYBOARD SHORTCUTS
+        // ============================================
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                document.getElementById('loginForm').dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // ============================================
+        // REAL-TIME VALIDATION
+        // ============================================
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value.trim();
+            if (email && (!email.includes('@') || !email.includes('.'))) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email';
+                this.classList.add('error');
+            } else {
+                document.getElementById('emailError').textContent = '';
+                this.classList.remove('error');
+            }
+        });
+
+        document.getElementById('password').addEventListener('blur', function() {
+            const password = this.value.trim();
+            if (password && password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                this.classList.add('error');
+            } else {
+                document.getElementById('passwordError').textContent = '';
+                this.classList.remove('error');
+            }
+        });
+
+        // ============================================
+        // REMEMBER ME
+        // ============================================
+        document.getElementById('remember').addEventListener('change', function() {
+            if (this.checked) {
+                localStorage.setItem('rememberMe', 'true');
+            } else {
+                localStorage.removeItem('rememberMe');
+            }
+        });
+
+        if (localStorage.getItem('rememberMe') === 'true') {
+            document.getElementById('remember').checked = true;
+        }
+
+        // ============================================
+        // CONSOLE INFO
+        // ============================================
+        console.log('🐄 Cow Market Login Page Loaded!');
+        console.log('📝 Demo Credentials: demo@cowmarket.com / password123');
+        console.log('💡 Add ?demo=true to URL for auto-fill');
+        console.log('📱 Fully responsive across all devices!');
+    </script>
+</body>
+</html>
