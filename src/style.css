@@ -1,0 +1,198 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   COMMON
+=========================== */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    font-family:'Poppins',sans-serif;
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+input,
+textarea{
+    font-family:'Poppins',sans-serif;
+    outline:none;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+section{
+    padding:90px 8%;
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    display:inline-block;
+    padding:8px 20px;
+    background:#dcfce7;
+    color:#15803d;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-size:44px;
+    color:#222;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.primary-btn{
+    background:linear-gradient(90deg,#16a34a,#22c55e);
+    color:white;
+    border:none;
+    border-radius:50px;
+    padding:15px 35px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(34,197,94,.35);
+}
+
+.secondary-btn{
+    background:white;
+    color:#16a34a;
+    border:2px solid #16a34a;
+    border-radius:50px;
+    padding:15px 35px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.secondary-btn:hover{
+    background:#16a34a;
+    color:white;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.section-title h2{
+font-size:36px;
+}
+
+section{
+padding:80px 5%;
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title h2{
+font-size:30px;
+}
+
+.section-title p{
+font-size:15px;
+}
+
+}
+
+@media(max-width:576px){
+
+section{
+padding:70px 20px;
+}
+
+.section-title h2{
+font-size:26px;
+}
+
+}
