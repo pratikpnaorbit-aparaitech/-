@@ -1,11 +1,11 @@
 import "./WhyChoose.css";
-import heroImage from "../assets/images/hero.png";
+import heroImage from "../assets/images/hero.webp";
 
 function WhyChoose() {
   return (
-    <section className="why">
-
-      <div className="why-left">
+    <section className="why" data-aos="fade-up">
+        <div className="why-left" data-aos="fade-right">
+      
 
         <span>WHY CHOOSE US</span>
 
@@ -55,8 +55,8 @@ function WhyChoose() {
         </div>
 
       </div>
-
-      <div className="why-right">
+      <div className="why-right" data-aos="fade-left">
+      
 
         <img src={heroImage} alt="Cow"/>
 

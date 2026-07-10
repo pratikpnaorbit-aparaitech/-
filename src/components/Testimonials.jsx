@@ -2,7 +2,7 @@ import "./Testimonials.css";
 
 function Testimonials() {
   return (
-    <section className="testimonials">
+    <section className="testimonials" data-aos="fade-up">
 
       <div className="section-title">
         <span>TESTIMONIALS</span>
@@ -14,7 +14,7 @@ function Testimonials() {
 
       <div className="testimonial-container">
 
-        <div className="testimonial-card">
+        <div className="testimonial-card" data-aos="zoom-in">
 
           <div className="stars">★★★★★</div>
 
@@ -29,8 +29,11 @@ function Testimonials() {
 
         </div>
 
-        <div className="testimonial-card">
-
+        <div
+  className="testimonial-card"
+  data-aos="zoom-in"
+  data-aos-delay="200"
+>
           <div className="stars">★★★★★</div>
 
           <p>
@@ -44,7 +47,11 @@ function Testimonials() {
 
         </div>
 
-        <div className="testimonial-card">
+        <div
+  className="testimonial-card"
+  data-aos="zoom-in"
+  data-aos-delay="400"
+>
 
           <div className="stars">★★★★★</div>
 

@@ -6,14 +6,15 @@
     justify-content:space-between;
     align-items:center;
 
-    padding:0 80px;
+    padding:0 5%;
+    box-sizing:border-box;
 
     background:rgba(255,255,255,0.85);
     backdrop-filter:blur(12px);
     -webkit-backdrop-filter:blur(12px);
 
     border-bottom:1px solid rgba(255,255,255,.3);
-    
+
     position:fixed;
     top:0;
     left:0;
@@ -22,11 +23,12 @@
 
     box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
-
 .logo{
     display:flex;
     align-items:center;
     gap:8px;
+
+    flex-shrink:0;
 }
 
 .logo-icon{
@@ -43,6 +45,9 @@
     display:flex;
     list-style:none;
     gap:35px;
+
+    flex:1;
+    justify-content:center;
 }
 
 .nav-links a{
@@ -59,6 +64,7 @@
 .nav-buttons{
     display:flex;
     gap:15px;
+    flex-shrink:0;
 }
 
 .login-btn{
@@ -99,4 +105,80 @@
 
 .signup-btn:hover{
     background:#245b27;
+}
+/* Hide menu icon on desktop */
+
+.menu-icon{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.mobile-buttons{
+    display:none;
+}
+
+/* =========================
+      Mobile Responsive
+========================= */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        padding:15px 20px;
+        height:80px;
+
+    }
+
+    .menu-icon{
+        display:block;
+        color:#2e7d32;
+    }
+
+    .desktop-buttons{
+        display:none;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:80px;
+        left:0;
+
+        width:100%;
+
+        background:white;
+
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:20px;
+
+        padding:25px 0;
+
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+        transform:translateY(-150%);
+        transition:.4s;
+    }
+
+    .nav-links.active{
+
+        transform:translateY(0);
+
+    }
+
+    .mobile-buttons{
+
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        margin-top:10px;
+
+    }
+
 }

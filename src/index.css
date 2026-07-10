@@ -108,3 +108,6 @@ code {
   background: var(--code-bg);
 }
 
+html{
+  scroll-behavior: smooth;
+}

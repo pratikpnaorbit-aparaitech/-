@@ -1,5 +1,5 @@
 import "./Contact.css";
-
+<section className="contact" data-aos="zoom-in-up"></section>
 function Contact() {
   return (
     <section className="contact">

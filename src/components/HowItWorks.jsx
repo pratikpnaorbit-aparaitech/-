@@ -2,7 +2,7 @@ import "./HowItWorks.css";
 
 function HowItWorks() {
   return (
-    <section className="how">
+    <section className="how-it-works" data-aos="fade-up">
 
       <div className="section-title">
         <span>HOW IT WORKS</span>

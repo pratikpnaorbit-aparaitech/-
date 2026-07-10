@@ -1,5 +1,5 @@
 import "./FAQ.css";
-
+<section className="faq" data-aos="fade-up"></section>
 function FAQ() {
   return (
     <section className="faq">

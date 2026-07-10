@@ -2,7 +2,7 @@
 
 position:relative;
 
-min-height:100vh;
+min-height:85vh;
 
 display:flex;
 
@@ -10,7 +10,7 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:120px 8%;
+padding:80px 8%;
 
 overflow:hidden;
 
@@ -91,7 +91,7 @@ border-radius:30px;
 
 font-weight:600;
 
-margin-bottom:25px;
+margin-bottom:16px;
 
 }
 
@@ -105,7 +105,7 @@ font-weight:800;
 
 color:#222;
 
-margin-bottom:25px;
+margin-bottom:16px;
 
 }
 
@@ -125,7 +125,7 @@ color:#666;
 
 max-width:580px;
 
-margin-bottom:40px;
+margin-bottom:28px;
 
 }
 
@@ -252,19 +252,24 @@ z-index:2;
 }
 
 .hero-image{
+    width:100%;
+    max-width:620px;
 
-width:100%;
+    position:relative;
+    z-index:2;
 
-max-width:470px;
-position:relative;
+    animation:float 5s ease-in-out infinite;
 
-z-index:1;
+    filter:
+        drop-shadow(0 15px 30px rgba(0,0,0,.15))
+        drop-shadow(0 5px 10px rgba(46,125,50,.12));
 
-
-animation:float 4s ease-in-out infinite;
-
+    transition:transform .4s ease;
 }
 
+.hero-image:hover{
+    transform:scale(1.03);
+}
 .card{
 
 position:absolute;
@@ -365,7 +370,7 @@ justify-content:center;
 
 justify-content:center;
 
-margin-bottom:40px;
+margin-bottom:28px;
 
 }
 

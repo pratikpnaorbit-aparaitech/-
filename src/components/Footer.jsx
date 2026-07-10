@@ -1,5 +1,5 @@
 import "./Footer.css";
-
+<footer data-aos="fade-up"></footer>
 function Footer() {
   return (
     <footer className="footer">

@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
@@ -9,6 +13,15 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 function Landing() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -19,10 +32,7 @@ function Landing() {
       <Testimonials />
       <FAQ />
       <Contact />
-      <Contact />
       <Footer />
-      
-      {/* <Stats /> */}
     </>
   );
 }

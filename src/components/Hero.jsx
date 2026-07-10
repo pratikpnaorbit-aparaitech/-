@@ -1,14 +1,14 @@
 import "./Hero.css";
-import heroImage from "../assets/images/hero.png";
+import heroImage from "../assets/images/hero.webp";
 
 function Hero() {
   return (
-    <section className="hero">
-
+    <section className="hero" data-aos="fade-up">
+      
       <div className="hero-bg-circle circle1"></div>
       <div className="hero-bg-circle circle2"></div>
 
-      <div className="hero-left">
+      <div className="hero-left" data-aos="fade-right">
 
         <span className="hero-tag">
           🐄 India's Trusted Livestock Marketplace
@@ -52,7 +52,7 @@ function Hero() {
 
       </div>
 
-      <div className="hero-right">
+     <div className="hero-right" data-aos="fade-left">
 
         <img src={heroImage} alt="Cow" className="hero-image"/>
 

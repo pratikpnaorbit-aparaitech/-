@@ -2,7 +2,7 @@ import "./Features.css";
 
 function Features() {
   return (
-    <section className="features">
+    <section className="features" data-aos="fade-up">
 
       <div className="section-title">
         <span>WHY CHOOSE US</span>
@@ -14,7 +14,7 @@ function Features() {
 
       <div className="feature-container">
 
-        <div className="feature-card">
+        <div className="feature-card" data-aos="fade-up">
 
           <div className="feature-icon">🐄</div>
 
@@ -26,7 +26,9 @@ function Features() {
 
         </div>
 
-        <div className="feature-card">
+        <div className="feature-card"
+     data-aos="fade-up"
+     data-aos-delay="200">
 
           <div className="feature-icon">🤝</div>
 
@@ -38,7 +40,9 @@ function Features() {
 
         </div>
 
-        <div className="feature-card">
+       <div className="feature-card"
+     data-aos="fade-up"
+     data-aos-delay="400">
 
           <div className="feature-icon">🚚</div>
 
