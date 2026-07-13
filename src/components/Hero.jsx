@@ -56,20 +56,7 @@ function Hero() {
 
         <img src={heroImage} alt="Cow" className="hero-image"/>
 
-        <div className="card card1">
-          <h3>25K+</h3>
-          <p>Cattle Listed</p>
-        </div>
-
-        <div className="card card2">
-          <h3>100+</h3>
-          <p>Cities Connected</p>
-        </div>
-
-        <div className="card card3">
-          ⭐ 4.9 Customer Rating
-        </div>
-
+        
       </div>
 
     </section>
