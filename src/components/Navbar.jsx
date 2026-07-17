@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
+
 
 function Navbar() {
 
@@ -39,16 +41,36 @@ function Navbar() {
         </li>
 
         <div className="nav-buttons mobile-buttons">
-          <button className="login-btn">Login</button>
-          <button className="signup-btn">Get Started</button>
-        </div>
+  <Link to="/login">
+    <button
+      className="login-btn"
+      onClick={() => setMenuOpen(false)}
+    >
+      Login
+    </button>
+  </Link>
+
+  <Link to="/login">
+    <button
+      className="signup-btn"
+      onClick={() => setMenuOpen(false)}
+    >
+      Get Started
+    </button>
+  </Link>
+</div>
 
       </ul>
 
       <div className="nav-buttons desktop-buttons">
-        <button className="login-btn">Login</button>
-        <button className="signup-btn">Get Started</button>
-      </div>
+  <Link to="/login">
+    <button className="login-btn">Login</button>
+  </Link>
+
+  <Link to="/login">
+    <button className="signup-btn">Get Started</button>
+  </Link>
+</div>
 
     </nav>
   );
